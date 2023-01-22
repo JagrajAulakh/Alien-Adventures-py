@@ -1,4 +1,5 @@
 # Alien-Adventures-py
+
 Alien Adventures is 2D platformer game made in Python3 using the PyGame library.
 
 ## How to run
@@ -13,3 +14,10 @@ pip install -r requirements.txt
 python main.py
 ```
 
+## Demo
+
+### Menu
+![menu_demo](./gif/menu.gif)
+
+### Gameplay
+![gameplay_demo](./gif/gameplay.gif)
