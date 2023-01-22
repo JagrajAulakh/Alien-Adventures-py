@@ -9,6 +9,7 @@ vec = math.Vector2
 GRAVITY = 0.6
 global_tick = 0
 
+
 # Colors
 WHITE = (255,255,255)
 BLACK = (0,0,0)
@@ -390,15 +391,15 @@ def load_images():
 	title_text_rect = title_text_render.get_rect()
 	title_text_rect.topleft = 100,100
 
-	player_sheet = image.load('images/playerSheet.png').convert_alpha()
+	player_sheet = image.load('images/playerSheet.png')
 	player_cos = get_cos('images/playerCo.txt')
 
-	enemy_sheet = image.load('images/enemySheet.png').convert_alpha()
+	enemy_sheet = image.load('images/enemySheet.png')
 	enemy_cos = get_cos('images/enemyCo.txt')
 
-	misc_sheet = image.load('images/miscSheet.png').convert_alpha()
+	misc_sheet = image.load('images/miscSheet.png')
 	misc_cos = get_cos('images/miscCo.txt')
-	misc_sheet2 = image.load('images/miscSheet2.png').convert_alpha()
+	misc_sheet2 = image.load('images/miscSheet2.png')
 	misc_cos2 = get_cos('images/miscCo2.txt')
 
 	flag_sheet = image.load('images/flagSheet.png')
@@ -479,10 +480,10 @@ def load_images():
 	checkpoint_img_hover = image.load('images/icons/checkpointWhite.png')
 	checkpoint_img_hover = transform.scale(checkpoint_img_hover, (checkpoint_img_hover.get_width()//2, checkpoint_img_hover.get_height()//2))
 
-	platform_sheet = image.load('images/platformSheet.png').convert_alpha()
+	platform_sheet = image.load('images/platformSheet.png')
 	platform_cos = get_cos('images/platformCo.txt')
 
-	decor_sheet = image.load('images/decorSheet.png').convert_alpha()
+	decor_sheet = image.load('images/decorSheet.png')
 	decor_cos = get_cos('images/decorCo.txt')
 
 	water_sheet = image.load('images/waterSheet.png')
@@ -501,25 +502,25 @@ def load_images():
 	menu_back_rect = menu_back.get_rect()
 	menu_back_rect.topleft = -128, -128
 
-	arrow_left_black = image.load('images/backArrowBlack.png').convert_alpha()
+	arrow_left_black = image.load('images/backArrowBlack.png')
 	arrow_right_black = transform.rotate(arrow_left_black, 180)
 	arrow_down_black = transform.rotate(arrow_left_black, 90)
 	arrow_up_black = transform.rotate(arrow_left_black, 270)
 
-	arrow_left_white = image.load('images/backArrowWhite.png').convert_alpha()
+	arrow_left_white = image.load('images/backArrowWhite.png')
 	arrow_right_white = transform.rotate(arrow_left_white, 180)
 	arrow_down_white = transform.rotate(arrow_left_white, 90)
 	arrow_up_white = transform.rotate(arrow_left_white, 270)
 
-	sound_sheet = image.load('images/Sound.png').convert_alpha()
+	sound_sheet = image.load('images/Sound.png')
 	sound_sheet = transform.scale(sound_sheet, (sound_sheet.get_width() * 2, sound_sheet.get_height() * 2))
 
-	controls_image = image.load('images/controls.png').convert_alpha()
+	controls_image = image.load('images/controls.png')
 	controls_image = transform.scale(controls_image, (controls_image.get_width() * 2, controls_image.get_height() * 2))
 	controls_image_rect = controls_image.get_rect()
 	controls_image_rect.topleft = width+64*3,-height+64*3
 
-	x_image = image.load('images/x.png').convert_alpha()
+	x_image = image.load('images/x.png')
 
 	all_levels = [
 	image.load('levels/level1.png'), 
@@ -548,7 +549,7 @@ def do_loading(target, args=[]):
 	t.start()
 
 	while not loading_images_done:
-		if not l.isAlive():
+		if not l.is_alive():
 			loading_images_done = True
 
 do_loading(load_images)
